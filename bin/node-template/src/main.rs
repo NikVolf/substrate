@@ -6,7 +6,7 @@ mod chain_spec;
 mod service;
 mod cli;
 
-pub use sc_cli::{VersionInfo, IntoExit, error};
+pub use sc_cli::{VersionInfo, error};
 
 fn main() -> Result<(), cli::error::Error> {
 	let version = VersionInfo {
@@ -19,5 +19,5 @@ fn main() -> Result<(), cli::error::Error> {
 		support_url: "support.anonymous.an",
 	};
 
-	cli::run(std::env::args(), cli::Exit, version)
+	cli::run(std::env::args(), version)
 }
